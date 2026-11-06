@@ -1,0 +1,40 @@
+{
+    "Device": "GW2AR-18C",
+    "Files": [
+        {
+            "Path": "E:/project/project gowin/do_an_claude/src/controldriver.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "E:/project/project gowin/do_an_claude/src/debounce.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "E:/project/project gowin/do_an_claude/src/display.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "E:/project/project gowin/do_an_claude/src/doordrive.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "E:/project/project gowin/do_an_claude/src/elevator_top.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "E:/project/project gowin/do_an_claude/src/floor.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "E:/project/project gowin/do_an_claude/src/stepdrive.v",
+            "Type": "verilog"
+        }
+    ],
+    "IncludePath": [
+    ],
+    "LoopLimit": 2000,
+    "ResultFile": "E:/project/project gowin/do_an_claude/impl/temp/rtl_parser.result",
+    "Top": "",
+    "VerilogStd": "verilog_2001",
+    "VhdlStd": "vhdl_93"
+}

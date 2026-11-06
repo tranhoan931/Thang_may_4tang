@@ -1,0 +1,76 @@
+// ============================================================================
+//  elevator.cst - Physical constraints (Gowin GW2AR-18C, Tang Nano 20K)
+//  Gan chan theo so do: ten trong ngoac la ten net tren so do
+//  Tat ca nut / cam bien la active LOW -> bat pull-up noi (nen them
+//  dien tro 10k ngoai cho cac A3144 de chong nhieu tot hon)
+// ============================================================================
+
+// ---------------- Clock 27 MHz tren board (khong co trong so do) ------------
+IO_LOC  "clk" 4;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+
+// ---------------- Reset ----------------
+IO_LOC  "rst_n" 15;                          // (rst_n)
+IO_PORT "rst_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// ---------------- Cam bien Hall A3144 (active LOW) ----------------
+IO_LOC  "hall_n[0]" 73;                      // (sensor_fl_1)
+IO_LOC  "hall_n[1]" 74;                      // (sensor_fl_2)
+IO_LOC  "hall_n[2]" 18;                      // (sensor_fl_3)
+IO_LOC  "hall_n[3]" 85;                      // (sensor_fl_4)
+IO_PORT "hall_n[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "hall_n[1]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "hall_n[2]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "hall_n[3]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// ---------------- Nut chon tang trong cabin (bt_in_x) ----------------
+IO_LOC  "cab_n[0]" 77;                       // (bt_in_1)
+IO_LOC  "cab_n[1]" 16;                       // (bt_in_2)
+IO_LOC  "cab_n[2]" 27;                       // (bt_in_3)
+IO_LOC  "cab_n[3]" 28;                       // (bt_in_4)
+IO_PORT "cab_n[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "cab_n[1]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "cab_n[2]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "cab_n[3]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// ---------------- Nut goi tang ngoai cabin (bt_out_x) ----------------
+IO_LOC  "up1_n" 25;                          // (bt_out_1)
+IO_LOC  "dn2_n" 26;                          // (bt_out_2_down)
+IO_LOC  "up2_n" 29;                          // (bt_out_2_up)
+IO_LOC  "dn3_n" 30;                          // (bt_out_3_down)
+IO_LOC  "up3_n" 31;                          // (bt_out_3_up)
+IO_LOC  "dn4_n" 17;                          // (bt_out_4)
+IO_PORT "up1_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "dn2_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "up2_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "dn3_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "up3_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "dn4_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// ---------------- Nut cua ----------------
+IO_LOC  "btn_open_n"  20;                    // (bt_door_open)
+IO_LOC  "btn_close_n" 19;                    // (bt_door_closer)
+IO_PORT "btn_open_n"  IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "btn_close_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// ---------------- Dong co buoc 28BYJ-48 qua ULN2003 ----------------
+IO_LOC  "motor_in[0]" 76;                    // (IN1)
+IO_LOC  "motor_in[1]" 80;                    // (IN2)
+IO_LOC  "motor_in[2]" 42;                    // (IN3)
+IO_LOC  "motor_in[3]" 41;                    // (IN4)
+IO_PORT "motor_in[0]" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE;
+IO_PORT "motor_in[1]" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE;
+IO_PORT "motor_in[2]" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE;
+IO_PORT "motor_in[3]" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE;
+
+// ---------------- Servo SG90 ----------------
+IO_LOC  "servo" 71;                          // (pwm_servo)
+IO_PORT "servo" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE;
+
+// ---------------- 74HC595 -> LED 7 doan ----------------
+IO_LOC  "ser"   49;                          // (ds)
+IO_LOC  "srclk" 86;                          // (sh_cp)
+IO_LOC  "rclk"  79;                          // (st_cp)
+IO_PORT "ser"   IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE;
+IO_PORT "srclk" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE;
+IO_PORT "rclk"  IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE;
