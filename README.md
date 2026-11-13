@@ -22,9 +22,9 @@
 ## Sơ đồ khối / FSM
 
 ## Cấu trúc thư mục
-src/  – mã Verilog
-Physical constraints/  – file gán chân (.cst)
-img/  – hình ảnh, sơ đồ
+- src/  – mã Verilog
+- Physical constraints/  – file gán chân (.cst)
+- img/  – hình ảnh, sơ đồ
 
 ## Cách build và nạp
 1. Mở Gowin IDE, tạo project cho GW2AR-18
